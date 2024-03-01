@@ -7,13 +7,9 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 
-class KeyboardListenerLivedata(
+internal class KeyboardListenerLivedata internal constructor(
     private val root: View, private val minKeyboardHeight: Int = 0
-) : LiveData<KeyboardListenerLivedata.Status>() {
-    sealed class Status(val height: Int? = null) {
-        class Open(height: Int) : Status(height)
-        class Closed() : Status()
-    }
+) : LiveData<Status>() {
 
     private val globalLayoutListener = ViewTreeObserver.OnGlobalLayoutListener {
         val displayRect = Rect().apply { root.getWindowVisibleDisplayFrame(this) }
