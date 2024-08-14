@@ -7,7 +7,7 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 
-internal class KeyboardListenerLivedata internal constructor(
+class KeyboardListenerLivedata internal constructor(
     private val root: View, private val minKeyboardHeight: Int = 0
 ) : LiveData<Status>() {
 
