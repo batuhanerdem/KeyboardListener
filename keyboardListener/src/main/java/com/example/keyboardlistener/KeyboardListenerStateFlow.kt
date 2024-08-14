@@ -5,9 +5,8 @@ import com.example.keyboardlistener.Status
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
-class KeyboardListenerStateFlow(
-    private val root: View,
-    private val minKeyboardHeight: Int = 0
+class KeyboardListenerStateFlow internal constructor(
+    private val root: View, private val minKeyboardHeight: Int = 0
 ) {
 
     private val _statusFlow = MutableStateFlow<Status>(Status.Closed())
